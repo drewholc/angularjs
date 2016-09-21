@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link data-require="angular.js@1.5.3" data-semver="1.5.3" rel="stylesheet" href="Bootstrap" />
+    <script data-require="angular.js@1.5.3" data-semver="1.5.3" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Angular.js day01</title>
+</head>
+<body>
+
+    <div ng-controller="hello">
+      <h1>{{greeting}}</h1>
+      <img ng-src="{{imgsrc}}" style="width:40%" />
+    </div>
+
+    <div ng-controller="hola">
+      <h1>{{greeting}}</h1>
+    </div>
+
+    <div ng-controller = "petController as petCtrl" >
+        <div ng-controller = "dogController as dogCtrl">
+            <p>Hello {{dogCtrl.name}}
+                <span ng-show = "false">You're on a leash!</span>
+            </p>
+            <button ng-show="petCtrl.taketopound" ng-click="petCtrl.taketopound(dogCtrl.name)">{{dogCtrl.buttontext}}</button>
+
+        <div ng-controller="fishController as fishCtrl">
+            <p>Hello {{fishCtrl.name}}
+                <span ng-show = "false">You're a freshwater fish!</span>
+            </p>
+            <button ng-show="fishCtrl.testFish" ng-click="fishCtrl.testFish()">TEST THAT FISH</button>
+
+        </div>
+        </div>
+    </div>
+
+</body>
+</html>
